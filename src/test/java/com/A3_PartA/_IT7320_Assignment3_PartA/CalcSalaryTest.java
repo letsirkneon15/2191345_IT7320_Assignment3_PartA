@@ -29,20 +29,20 @@ public class CalcSalaryTest {
 		expectedWeeklySalary = (income - (income * (expectedTax / 100))) / 52;
 		expectedFortnightSalary = expectedWeeklySalary * 2;
 		expectedKiwiSaver = income * (kiwiSaverPer / 100);
-
-		/* Compute Tax */
-		mockObj = Mockito.mock(ISalary.class);
-		Mockito.when(mockObj.computeTax(income)).thenReturn(calcSalaryComputeObj.computeTax(income));
-		calcSalaryObj.setObj(mockObj);
-
-		actualTax = calcSalaryObj.computeTax(income);
-
-		empObj = new Employee(income, actualTax, 0.00, 0.00, kiwiSaverPer);
-
 		
+		/* Compute Tax */
+		  mockObj = Mockito.mock(ISalary.class);
+		  Mockito.when(mockObj.computeTax(income)).thenReturn(calcSalaryComputeObj.
+		  computeTax(income)); calcSalaryObj.setObj(mockObj);
+		 
+		  actualTax = calcSalaryObj.computeTax(income);
+		  
+		  empObj = new Employee(income, actualTax, 0.00, 0.00, kiwiSaverPer);
+
 		  //Compute actualWeeklySalary
-		  Mockito.when(mockObj.weeklySalary(empObj)).thenReturn(calcSalaryComputeObj.weeklySalary(empObj)); 
-		  calcSalaryObj.setObj(mockObj);
+		
+		  Mockito.when(mockObj.weeklySalary(empObj)).thenReturn(calcSalaryComputeObj.
+		  weeklySalary(empObj)); calcSalaryObj.setObj(mockObj);
 		  
 		  actualWeeklySalary = calcSalaryObj.weeklySalary(empObj);
 		  
@@ -50,36 +50,35 @@ public class CalcSalaryTest {
 		  kiwiSaverPer);
 		  
 		  //Compute actualForthnightSalary
-		  Mockito.when(mockObj.fortnightSalary(empObj)).thenReturn(calcSalaryComputeObj.fortnightSalary(empObj)); 
-		  calcSalaryObj.setObj(mockObj);
+		
+		  Mockito.when(mockObj.fortnightSalary(empObj)).thenReturn(calcSalaryComputeObj
+		  .fortnightSalary(empObj)); calcSalaryObj.setObj(mockObj);
 		  
 		  actualFortnightSalary = calcSalaryObj.fortnightSalary(empObj);
 		  
 		  //Compute actualKiwiSaver
-		  Mockito.when(mockObj.computeKiwiSaver(empObj)).thenReturn(calcSalaryComputeObj.computeKiwiSaver(empObj)); 
+		
+		  Mockito.when(mockObj.computeKiwiSaver(empObj)).thenReturn(
+		  calcSalaryComputeObj.computeKiwiSaver(empObj));
 		  calcSalaryObj.setObj(mockObj);
 		  
-		  actualKiwiSaver = calcSalaryObj.computeKiwiSaver(empObj);	 
-
+		  actualKiwiSaver = calcSalaryObj.computeKiwiSaver(empObj);
 	}
 
 	@Test
 	public void testComputeTax() {
 		assertEquals(expectedTax, actualTax, 0);
-
 	}
 
-	
-	  @Test public void testWeeklySalary() { assertEquals(expectedWeeklySalary,
+	 @Test public void testWeeklySalary() { assertEquals(expectedWeeklySalary,
 	  actualWeeklySalary, 0); }
 	  
-	  @Test public void testFortnightSalary() {
+	 @Test public void testFortnightSalary() {
 	  assertEquals(expectedFortnightSalary, actualFortnightSalary, 0); }
 	  
-	  @Test public void testComputeKiwiSaver() { assertEquals(expectedKiwiSaver,
+	 @Test public void testComputeKiwiSaver() { assertEquals(expectedKiwiSaver,
 	  actualKiwiSaver, 0); }
 	 
-
 	@After
 	public void tearDown() throws Exception {
 		calcSalaryObj = null;

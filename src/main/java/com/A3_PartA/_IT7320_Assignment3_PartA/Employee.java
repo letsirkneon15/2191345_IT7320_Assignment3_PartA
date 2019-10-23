@@ -1,10 +1,8 @@
 package com.A3_PartA._IT7320_Assignment3_PartA;
-
 import java.io.Serializable;
 
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
 	
 	private double annualSalary;
 	private double tax; 
@@ -21,38 +19,15 @@ public class Employee implements Serializable {
 		this.kiwiSaver = kiwiSaver;
 	}
 	
-	public Employee() {
-		
-	}
-
-	public double getAnnualSalary() {
-		return annualSalary;
-	}
-	public void setAnnualSalary(double annualSalary) {
-		this.annualSalary = annualSalary;
-	}
-	public double getTax() {
-		return tax;
-	}
-	public void setTax(double tax) {
-		this.tax = tax;
-	}
-	public double getWeeklySalary() {
-		return weeklySalary;
-	}
-	public void setWeeklySalary(double weeklySalary) {
-		this.weeklySalary = weeklySalary;
-	}
-	public double getFortnightSalary() {
-		return fortnightSalary;
-	}
-	public void setFortnightSalary(double fortnightSalary) {
-		this.fortnightSalary = fortnightSalary;
-	}
-	public double getKiwiSaver() {
-		return kiwiSaver;
-	}
-	public void setKiwiSaver(double kiwiSaver) {
-		this.kiwiSaver = kiwiSaver;
-	} 
+	public Employee() {	}
+	public double getAnnualSalary() {return annualSalary;}
+	public void setAnnualSalary(double annualSalary) {this.annualSalary = annualSalary;}
+	public double getTax() {return tax;	}
+	public void setTax(double tax) {this.tax = tax;	}
+	public double getWeeklySalary() {return weeklySalary;}
+	public void setWeeklySalary(double weeklySalary) {this.weeklySalary = weeklySalary;	}
+	public double getFortnightSalary() {return fortnightSalary;	}
+	public void setFortnightSalary(double fortnightSalary) {this.fortnightSalary = fortnightSalary;	}	
+	public double getKiwiSaver() {return kiwiSaver;}
+	public void setKiwiSaver(double kiwiSaver) {this.kiwiSaver = kiwiSaver;} 
 }

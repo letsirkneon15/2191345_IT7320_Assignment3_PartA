@@ -10,7 +10,6 @@ public class CalcSalaryCompute {
 	public double computeTax(double income) {
 		
 		System.out.println("Income from CalcSalary: " + income);
-		
 		double tax = 0.0; 
 		
 		if(income >= 0 && income <=14000) {
